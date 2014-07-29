@@ -85,7 +85,7 @@ Progress Report
 
 * extract patterns 
 
-* build lexicon: 
+* build lexicon
 
 ---
 
@@ -101,11 +101,7 @@ Progress Report
 
 * Chinese grammar is quite different from English one. </br>
 
-  .orange[->] We need to find new pattern instead.
-
-
-
-
+  .orange[->] We need to find new pattern rule instead.
 
 
 ---
@@ -115,7 +111,29 @@ Progress Report
 * Patterns we want to extract: </br>
   我(sub) 很(adv) .green[開心(v)] </br>
   我(sub) .green[是(v)] 白痴(n) </br> 
+  我(sub) .green[吃(v)] 了 一 隻 牛(obj) </br>
 
+
+---
+
+# Problems - Pattern Extraction
+
+* Strange things happens: </br>
+  我(sub) .green[肚子(v)] 痛(obj) </br>
+
+* Patterns we do not want: </br>
+.red[//check db to find examples]
+
+
+---
+
+# Problems - Pattern Extraction
+
+* CKIP tokenizer may not tokenize the sentence well
+
+* Stanford parser is not suitable for Chinese data
+
+* Need to find a new way to generate good patterns for Chinese
 
 ---
 
@@ -130,8 +148,16 @@ Progress Report
 
 ---
 
+# Problems
 
+* Need to redefine "document" </br>
+.red[✘] treat sentence as document 
 
+---
+class: center, middle
+
+Questions or Comments :)
+=============
 
 
     </textarea>
