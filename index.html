@@ -13,8 +13,8 @@
         font-family: 'Yanone Kaffeesatz';
         font-weight: 400;
       }
-      h1 { font-size: 6em; }
-      h2 { font-size: 2em; }
+      .remark-slide-content h1 { font-size: 4.5em; }
+      .remark-slide-content h2 { font-size: 2.5em; }
       h3 { font-size: 1.6em; }
       
       li p { line-height : 1.5em; }
@@ -26,6 +26,11 @@
       .orange { color: rgb(218, 134, 6);}
       .green { color: rgb(55, 126, 39);}
       .blue {color: rgb(39, 86, 151);}
+
+      .small-font{
+        font-size: 0.6em;
+        line-height: 0.4em;
+      }
 
       .right-column{
         width: 50%;
@@ -59,20 +64,20 @@ Progress Report
 
 ---
 
-# Aim
+## Aim
 
 * Use previous methods to analyze Chinese data
 
 ---
 
-# Corpus
+## Corpus
 
 * kimo blog data ( 2006/07/01 ~ 2007/06/30 )
 ![alt text](img/kimo_example.png)
 
 ---
 
-# Corpus
+## Corpus
 
 * different from LJ40K: </br>
 sentences with emoticon </br>
@@ -81,7 +86,7 @@ sentences with emoticon </br>
 
 ---
 
-# Finished Progress
+## Finished Progress
   
 * store raw data into database 
 
@@ -95,26 +100,27 @@ sentences with emoticon </br>
 
 ---
 
-# Progressing
+## Progressing
 
 * tfidf: for keyword identifying
 
 * svm
 
 ---
-# Problems - Tokenization
+## Problems - Tokenization
 
 * Stanford parser performs bad on Chinese sentences tokenizing. </br>
 .orange[->] Use CKIP instead
 
-* The new version of CKIP is unstable
+* Some sentences with lots of punctuation mark cannot be tokenized. </br>
+Examples: .small-font[如果你需要時間好好冷靜的思考.......沒關係......我願意等你.......無論多久我都會等你........等你準備好了.........等你願意見我....... 我不會再讓你擔心.......我也會按時吃飯........也會好好照顧自己.......你說的我都答應你........真的.......我說的都是真的.........請你相信 我.......... 小黑豬不會和小白豬分開的......就算有........也只是短暫的]
 
 
 
 
 ---
 
-# Problems - Pattern Extraction
+## Problems - Pattern Extraction
 
 * Chinese grammar is quite different from English one. </br>
 
@@ -123,7 +129,7 @@ sentences with emoticon </br>
 
 ---
 
-# Problems - Pattern Extraction
+## Problems - Pattern Extraction
 
 * Patterns we want to extract: </br>
   我(sub) 很(adv) .green[開心(v)] </br>
@@ -133,18 +139,21 @@ sentences with emoticon </br>
 
 ---
 
-# Problems - Pattern Extraction
+## Problems - Pattern Extraction
 
 * Strange things happens: </br>
   我(sub) .green[肚子(v)] 痛(obj) </br>
+  事(sub) .green[做(v)]
 
 * Patterns we do not want: </br>
-.red[//check db to find examples]
+  後來 很(adv) .green[快(v)] </br>
+  估(adv) .green[耐(v)]
+
 
 
 ---
 
-# Problems - Pattern Extraction
+## Problems - Pattern Extraction
 
 * CKIP tokenizer may not tokenize the sentence well
 
@@ -154,7 +163,7 @@ sentences with emoticon </br>
 
 ---
 
-# Problems - Feature Extraction
+## Problems - Feature Extraction
 .left-column[ ![alt text](img/feature_extract.png) ]
 .right-column[
 * difficult to find repeated patterns in one sentence, because sentence is too short
@@ -165,7 +174,7 @@ sentences with emoticon </br>
 
 ---
 
-# Problems
+## Problems
 
 * Need to redefine "document" </br>
 .red[✘] treat sentence as document 
