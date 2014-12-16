@@ -56,135 +56,41 @@
 
 class: center, middle
 
-Progress Report
-===============
+Work Report
+===========
 
-## Mei-Hua ##
-#### 2014.07.30 ####
-
----
-
-## Aim
-
-* Use previous methods to analyze Chinese data
+## Maxis Kao ##
+#### 2014.12.16 ####
 
 ---
 
-## Corpus
+## Say Hi
 
-* kimo blog data ( 2006/07/01 ~ 2007/06/30 )
-![alt text](img/kimo_example.png)
-
----
-
-## Corpus
-
-* different from LJ40K: </br>
-sentences with emoticon </br>
-
-* full of special characters, unnecessary punctuation marks </br>
+- 高定慧
+- Kao, Ting-Hui
+- Maxis
 
 ---
 
-## Finished Progress
-  
-* store raw data into database 
+## Reach me
 
-* tokenize sentences with CKIP tokenizer
-
-* use standford parser to get dependency relationship
-
-* extract patterns 
-
-* build lexicon
+- maxiskao
+- \#2661
 
 ---
 
-## Progressing
+## Settle Down
 
-* tfidf: for keyword identifying
-
-* svm
-
----
-## Problems - Tokenization
-
-* Stanford parser performs bad on Chinese sentences tokenizing. </br>
-.orange[->] Use CKIP instead
-
-* Some sentences with lots of punctuation mark cannot be tokenized. </br>
-Examples: .small-font[如果你需要時間好好冷靜的思考.......沒關係......我願意等你.......無論多久我都會等你........等你準備好了.........等你願意見我....... 我不會再讓你擔心.......我也會按時吃飯........也會好好照顧自己.......你說的我都答應你........真的.......我說的都是真的.........請你相信 我.......... 小黑豬不會和小白豬分開的......就算有........也只是短暫的]
-
-
-
+<img src="img/20141216-workspace.png" alt="work space" style="width: 100%"/>
 
 ---
 
-## Problems - Pattern Extraction
+##  Set up Web Search FE Development Environment
 
-* Chinese grammar is quite different from English one. </br>
-
-  .orange[->] We need to find new pattern rule instead.
-
-
----
-
-## Problems - Pattern Extraction
-
-* Patterns we want to extract: </br>
-  我(sub) 很(adv) .green[開心(v)] </br>
-  我(sub) .green[是(v)] 白痴(n) </br> 
-  我(sub) .green[吃(v)] 了 一 隻 牛(obj) </br>
-
-
----
-
-## Problems - Pattern Extraction
-
-* Strange things happens: </br>
-  我(sub) .green[肚子(v)] 痛(obj) </br>
-  事(sub) .green[做(v)]
-
-* Patterns we do not want: </br>
-  後來 很(adv) .green[快(v)] </br>
-  估(adv) .green[耐(v)]
-
-
-
----
-
-## Problems - Pattern Extraction
-
-* CKIP tokenizer may not tokenize the sentence well
-
-* Stanford parser is not suitable for Chinese data
-
-* Need to find a new way to generate good patterns for Chinese
-
----
-
-## Problems - Feature Extraction
-.left-column[ ![alt text](img/feature_extract.png) ]
-.right-column[
-* difficult to find repeated patterns in one sentence, because sentence is too short
-
-* many patterns appear in only one emotion category </br>
-.orange[->] useless for training models
-]
-
----
-
-## Problems
-
-* Need to redefine "document" </br>
-.red[✘] treat sentence as document 
-
----
-class: center, middle
-
-Questions or Comments :)
-=============
-
+* OpenStack
+* `yinst`, `yroot`
+* ssh-key
+* github
 
     </textarea>
     <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
